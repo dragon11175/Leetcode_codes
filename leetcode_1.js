@@ -7,21 +7,25 @@
 //
 // You can return the answer in any order.
 
-var two_sum=function(array,target){
-  var temp=target;
-  var result=[];
-  
-  for(var i=0;i<=array.length;i++){
-    if(array[i]+array[i+1]==temp){
-      result.push(i);
-      result.push(i+1);
+var twoSum = function(nums, target) {
+    var result=[];
+    for(var i=0;i<=nums.length;i++){
+       for(var j=0;j<=nums.length;j++){
+        if(i!==j){
+            if(nums[i]+nums[j]==target){
+                result.push(i);
+                result.push(j);
+            }
+        }
+       }
+       if(result.length==2){
+        break;
+       }
     }
-  }
+    return result;
+    
+};
   
-  return result;
-  };
-  
-  
-  console.log(two_sum([2,7,11,15],9));
-  console.log(two_sum([3,2,4],6));
-  console.log(two_sum([3,3],6));
+  console.log(twoSum([2,7,11,15],9));
+  console.log(twoSum([3,2,4],6));
+  console.log(twoSum([3,3],6));
